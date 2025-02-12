@@ -1,6 +1,7 @@
 "use client";
 
-
+import Image from "next/image";
+import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
 import courseData from "@/data/code_courses.json";
@@ -29,7 +30,13 @@ const CoursesPage = () => {
                 {course.description}
               </CardItem>
               <CardItem translateZ="100" className="w-full mt-4">
-                <p></p>
+                <Image
+                  src={course.image}
+                  height={1000}
+                  width={1000}
+                  className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                  alt={course.title}
+                />
               </CardItem>
               <div className="flex justify-between items-center mt-20">
                 <CardItem
